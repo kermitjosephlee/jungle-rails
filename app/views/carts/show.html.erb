@@ -4,6 +4,7 @@
     <h1>My Cart</h1>
   </header>
 
+<% if cart.size > 0 %>
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -43,11 +44,15 @@
           data-name="Jungle"
           data-description="Joe's Jungle Order"
           data-locale="auto"
-          data-email="kermitjosephlee@gmail.com"
+          data-email="kermitjosephlee@example.com"
           data-currency="cad">
         </script>
       <% end %>
     </div>
   </div>
-
+  <% else %>
+  <p>
+    <h1> Your Cart Is Empty, please go back and fill your Cart! </h1>
+  </p>
+<% end %>
 </section>
