@@ -25,7 +25,7 @@
           <dd><%= render @product.ratings %></dd>
           <dd><%= form_for [@product, @rating] do |f| %>
             <%= f.text_area :description, size: "60x12" %>
-            <%= f.select :rating, [["5", 5], ["4", 4], ["3", 3], ["2", 2], ["1", 1]] %>
+            <%= f.select :rating, [5, 4, 3, 2, 1] %>
             <%= f.submit "Create" %>
             <% end %>
           </dd>

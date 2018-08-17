@@ -36,6 +36,7 @@ puts "Re-creating Products ..."
 Product.destroy_all
 
 ned = User.create({
+  id: 1,
   name: "Ned Flanders",
   email: "ned@flanders.com",
   password_digest: "password"
@@ -139,12 +140,14 @@ cat3.products.create!({
 })
 
 product1.ratings.create!({
+  user_id: 1,
   user: ned,
   description: "I don't like it",
   rating: 1,
 })
 
 product2.ratings.create!({
+  user_id: 1,
   user: ned,
   description: "It's like I'm wearing nothing at all",
   rating: 5,
