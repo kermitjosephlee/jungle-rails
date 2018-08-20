@@ -22,12 +22,16 @@
           <dd><%= @product.quantity %></dd>
           <dt>Price</dt>
           <dd><%= @product.price %></dd>
-          <dd><%= render @product.ratings %></dd>
+          <dd><h4>Product Reviews</h4></dd>
+          <dd><%= render @product.ratings.reverse %></dd>
+          <% if current_user %>
           <dd><%= form_for [@product, @rating] do |f| %>
             <%= f.text_area :description, size: "60x12" %>
             <%= f.select :rating, [5, 4, 3, 2, 1] %>
             <%= f.submit "Create" %>
             <% end %>
+          <% else %>
+          <% end %>
           </dd>
         </dl>
       </div>
